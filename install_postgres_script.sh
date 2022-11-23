@@ -1,6 +1,7 @@
 #!/bin/bash
 PACKAGE_URL=https://ftp.postgresql.org/pub/source/v15.1/postgresql-15.1.tar.bz2
-
+echo $(date) 'INSTALLING DEPENDENCIES...'
+sudo apt install -y libreadline-dev make gcc zlib1g-dev
 echo $(date) 'Fetching postgresql version 15...'
 wget "$PACKAGE_URL"
 echo 'DÉCOMPRESSING package...'
