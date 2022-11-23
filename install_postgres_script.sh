@@ -13,3 +13,12 @@ make
 echo 'INSTALLING package...'
 sudo make install
 echo $(date) 'DONE'
+echo 'ENTERING USR/LOCAL/PGSQL/BIN DIR...'
+cd /usr/local/pgsql/bin
+echo 'ATTRIBUTING PRIVILEGES TO USER POSTGRES...'
+sudo chown postgres /usr/local/pgsql/
+echo 'INITILIALIZING DATABASE...'
+./initdb -D /usr/local/pgsql/data
+echo 'STARTING DB...'
+./pg_ctl -D /usr/local/pgsql/data start
+echo 'done :p'
